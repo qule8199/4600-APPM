@@ -37,12 +37,15 @@ def fixedpt(f,x0,tol,Nmax):
     ''' tol = stopping tolerance'''
 
     count = 0
+    vector_guesses = []
     while (count <Nmax):
        count = count +1
+       vector_guesses.append(x0)
        x1 = f(x0)
        if (abs(x1-x0) <tol):
           xstar = x1
           ier = 0
+          print("The approximations are: ",vector_guesses)
           return [xstar,ier]
        x0 = x1
 
