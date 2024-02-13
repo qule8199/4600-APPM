@@ -44,5 +44,6 @@ def aitkins(a):
     for n in range(len(vector_guesses)-2):
         pn=a[n]-((a[n+1]-a[n])**2)/(a[n+2]-2*a[n+1]+a[n])
         new_vec.append(pn)
+    print(f"The new vector has {len(new_vec)} iterations")
     return new_vec
 driver()
