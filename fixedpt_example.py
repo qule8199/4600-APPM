@@ -4,8 +4,8 @@ import numpy as np
 def driver():
 
 # test functions 
-     f1 = lambda x: 1+0.5*np.sin(x)
-# fixed point is alpha1 = 1.4987....
+     f1 = lambda x: x-4*np.sin(2*x)-3
+     # fixed point is alpha1 = 1.4987....
 
      f2 = lambda x: 3+2*np.sin(x)
 #fixed point is alpha2 = 3.09... 

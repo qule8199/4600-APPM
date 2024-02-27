@@ -1,12 +1,12 @@
 import numpy as np
 def driver():
 #function
-     f1 = lambda x: (10/(x+4))**0.5
+     f1 = lambda x: x-4*np.sin(2*x)-3
 
-     Nmax=100
+     Nmax=1000
      tol=1e-10
 # test the function
-     x0 = 1.5
+     x0 = 0
      [xstar,ier] = fixedpt(f1,x0,tol,Nmax)
      print('the approximate fixed point is:',xstar)
      print('f1(xstar):',f1(xstar))

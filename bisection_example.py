@@ -4,15 +4,19 @@ import numpy as np
 def driver():
 
 # use routines    
-    f = lambda x: np.sin(x)
-    a = 0.5
-    b = 3*np.pi*.25
+    f = lambda x: x-4*np.sin(2*x)-3
+    #Question 1c x**3+x-4
+    #Question 1 2*x-1-np.sin(x)
+    #Question2a (x-5)**9
+    #Question2b x**9-45*x**8+900*x**7-10500*x**6+78750*x**5-393750*x**4+1312500*x**3-2812500*x**2+3515625*x-1953125
+    a = 0
+    b = 2
 
 #    f = lambda x: np.sin(x)
 #    a = 0.1
 #    b = np.pi+0.1
 
-    tol = 1e-5
+    tol = 1e-3
 
     [astar,ier] = bisection(f,a,b,tol)
     print('the approximate root is',astar)
@@ -56,8 +60,10 @@ def bisection(f,a,b,tol):
       return [astar, ier]
 
     count = 0
+    vector_guesses = []
     d = 0.5*(a+b)
     while (abs(d-a)> tol):
+      vector_guesses.append(d)
       fd = f(d)
       if (fd ==0):
         astar = d
@@ -71,9 +77,11 @@ def bisection(f,a,b,tol):
       d = 0.5*(a+b)
       count = count +1
 #      print('abs(d-a) = ', abs(d-a))
-      
+  
     astar = d
     ier = 0
+    #print("Guesses: ",vector_guesses)
+    print("Iterations: ",len(vector_guesses) )
     return [astar, ier]
       
 driver()               
