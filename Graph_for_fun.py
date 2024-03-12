@@ -2,7 +2,7 @@ import math
 import numpy as np
 import matplotlib.pyplot as plt
 x=np.linspace(0,2*np.pi,100)
-y1=x**2
+y1=7*x**2+7*x
 y2=x**2+2*x+1
 y3=np.sin(x)-np.tan(x)-7*x**3
 y4=16*x**2-9
